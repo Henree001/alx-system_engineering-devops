@@ -1,2 +1,2 @@
 #!/bin/bash
-commas -ls -xamp
+ls -map | sort -d
