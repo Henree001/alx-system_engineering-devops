@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo -u [betty] whoami
+sudo -u [betty] whoami /n
