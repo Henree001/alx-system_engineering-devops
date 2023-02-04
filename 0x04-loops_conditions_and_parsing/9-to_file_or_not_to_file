@@ -10,7 +10,8 @@ then
     elif [ ! -s "$filename" ]
     then
         echo "school file is empty"
-    elif [ -f "$filename" ]
+    fi
+    if [ -f "$filename" ]
     then
         echo "school file is a regular file"
     elif [ ! -f "$filename" ]
