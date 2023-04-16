@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Install nginx and start it
+apt-get -y install nginx
+service nginx start
+ufw allow 'Nginx HTTP'
+echo "Hello World!\n" | sudo tee /var/www/html/index.nginx-debian.html
+sed -i "48i location /redirect_me {\nreturn 301 https://www.nationalgeographic.com;\n}" /etc/nginx/sites-enabled/default
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+sed -i "51i error_page 404 /404.html;" /etc/nginx/sites-enabled/default
+service nginx restart
