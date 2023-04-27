@@ -2,4 +2,4 @@
 # script to link sites-enabled to sites-available and restart nginx
 
 sed -i 's/8080/80/' /etc/nginx/sites-enabled/default
-sudo service nginx start
+sudo service nginx restart
