@@ -22,7 +22,7 @@ printf %s "server {
       root /etc/nginx/html;
       internal;
     }
-    add_header X-Served-By $hostname;
+    add_header X-Served-By \$hostname;
 }" | sudo tee /etc/nginx/sites-available/default
 
 service nginx restart
