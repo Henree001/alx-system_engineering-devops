@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# script displays information about domains.
+domain_name="$1"
+display_info()
+{
+for arg in $@
+do
+    echo -n "The subdomain $arg is a "
+    dig "$arg.$domain_name" | awk '/ANSWER SECTION:/ {getline; print $4 " record and points to " $5}'
+done
+}
+if [ $# -lt 2 ]
+then
+    display_info www lb-01 web-01 web-02
+else
+    display_info $2
+fi
